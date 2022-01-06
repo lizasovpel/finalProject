@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="icon" href="images/index_icon.png">
+    <title>Andy Chef</title>
+</head>
+<body>
+    <header>
+        <div class="header_container">
+            <h1 class="andy type">Andy Chef</h1>
+            <!-- <div class="header header1"></div> -->
+            <div class="header header2">выйти</div>
+        </div>
+    </header>
+    <main>
+<!-- ЛОГИН -->
+        <div id="login" >
+            <img class="bg_img" src="images/index_bg.jpg" alt="bg_img">
+            <div class="bg"></div>
+            <div class="login-container">
+                <h4>Для входа в систему введите данные пользователя</h4>
+                <form class="formlogin">
+                    <div class="formString">
+                        <label for="inputLogin">Логин:</label>
+                        <input id="inputLogin" placeholder="введите логин"> 
+                    </div>
+                    <div class="formString">
+                        <label for="password">Пароль:</label>
+                        <input type="password" id="inputPassword" placeholder="введите пароль">    
+                    </div>
+                    <button class="button" type="submit">Войти</button>
+                </form>
+            </div>
+        </div>
+<!-- ГЛАВНОЕ МЕНЮ -->
+        <div id="mainMenu" hidden>
+            <img class="bg_img" src="images/index_bg.jpg" alt="bg_img">
+            <div class="bg"></div>
+            <div class="menu-container">
+                <a href="#desserts">
+                    <div class="card">
+                        <img src="images/dessert2-main.jpg" alt="dessert2">
+                        <h4>Десерты</h4>
+                    </div>
+                </a>
+                <a href="meat">
+                    <div class="card">
+                        <img src="images/meat2-main.jpg" alt="meat2">
+                        <h4>Мясные блюда</h4>
+                    </div>
+                </a>
+                <a href="salads">
+                    <div class="card">
+                        <img src="images/salad3-main.jpg" alt="salad3">
+                        <h4>Салаты</h4>
+                    </div>
+                </a>
+            </div>  
+        </div>
+
+<!-- ДЕСЕРТЫ -->
+        <div id="desserts" hidden>
+            <img class="bg_img" src="images/desserts_bg.jpg" alt="bg_img">
+            <div class="bg"></div>
+            <div class="menu-container">
+                <a href="#dessert2">
+                    <div class="card">
+                        <img src="images/dessert2-main.jpg" alt="dessert2">
+                        <h4>ВАНИЛЬНАЯ ТАРТАЛЕТКА С МАЛИНОЙ И ФИСТАШКОЙ</h4>
+                    </div>
+                </a>
+                <a href="dessert4">
+                    <div class="card">
+                        <img src="images/dessert4-main.jpg" alt="dessert4">
+                        <h4>ЧИЗКЕЙК С ОРЕХАМИ И КАРАМЕЛЬЮ</h4>
+                    </div>
+                </a>
+                <a href="dessert6">
+                    <div class="card">
+                        <img src="images/dessert6-main.jpg" alt="dessert6">
+                        <h4>ТРЮФЕЛЬНЫЕ КОНФЕТЫ С ВИШНЕЙ</h4>
+                    </div>
+                </a>
+            </div>  
+            <div class="newRecipe">
+                + Добавить новый рецепт
+            </div>
+        </div>
+
+<!-- МЯСО -->
+        <div id="meat" hidden >
+            <img class="bg_img" src="images/meat_bg.jpg" alt="bg_img">
+            <div class="bg"></div>
+            <div class="menu-container">
+                <a href="#meat2">
+                    <div class="card">
+                        <img src="images/meat2-main.jpg" alt="meat">
+                        <h4>БУРГЕР, СПОСОБНЫЙ ДОВЕСТИ ДО БЕЗУМИЯ</h4>
+                    </div>
+                </a>
+                <a href="meat8">
+                    <div class="card">
+                        <img src="images/meat8-main.jpg" alt="meat">
+                        <h4>СТЕЙК С СОУСОМ ИЗ ЧЕРНОГО ПЕРЦА</h4>
+                    </div>
+                </a>
+                <a href="meat4">
+                    <div class="card">
+                        <img src="images/meat4-main.jpg" alt="meat">
+                        <h4>РЫЦАРСКАЯ ПТИЦА ДЛЯ НОВОГОДНЕГО СТОЛА</h4>
+                    </div>
+                </a>
+            </div>  
+            <div class="newRecipe">
+                + Добавить новый рецепт
+            </div>
+        </div>
+
+<!-- САЛАТЫ -->
+        <div id="salads" hidden>
+            <img class="bg_img" src="images/salad_bg.jpg" alt="bg_img">
+            <div class="bg"></div>
+            <div class="menu-container">
+                <a href="#salad3">
+                    <div class="card">
+                        <img src="images/salad3-main.jpg" alt="salad3">
+                        <h4>САЛАТ КАПРЕЗЕ С ЛИСТЬЯМИ КОРН</h4>
+                    </div>
+                </a>
+                <a href="salad1">
+                    <div class="card">
+                        <img src="images/salad1-main.jpg" alt="salad1">
+                        <h4>CАЛАТ С ХРУСТЯЩИМ ЛУКОМ И ТЫКВОЙ ВО ФРИТЮРЕ</h4>
+                    </div>
+                </a>
+                <a href="salad7">
+                    <div class="card">
+                        <img src="images/salad7-main.jpg" alt="salad7">
+                        <h4>САЛАТ НИСУАЗ С ТУНЦОМ И ФИРМЕННОЙ ЗАПРАВКОЙ</h4>
+                    </div>
+                </a>
+            </div>  
+            <div class="newRecipe">
+                + Добавить новый рецепт
+            </div>
+        </div>
+
+
+
+<!-- ДЕСЕРТ 2 -->
+        <div id="dessert2" hidden>
+            <div class="none">
+                <img class="bg_img" src="images/dessert2-main.jpg" alt="bg_img">
+            </div>
+            <div class="black">
+                <div class="name">
+                    <hr>
+                    <h1>Ванильная тарталетка с малиной и фисташкой</h1>
+                    <hr>
+                </div>
+                <div class="recipe">
+                    <h4>Фисташковое песочное тесто</h4>
+                    <hr>
+                    <p></p>
+                    <div class="ingredients">
+                        <ul>
+                            <li>Мука фисташковая — 25г</li>
+                            <li>Мука — 200г</li>
+                            <li>Сахарная пудра — 50г</li>
+                            <li>Масло сливочное 82,5% — 90г</li>
+                            <li>Яйцо — 43г</li>
+                        </ul>
+                        <img src="images/dessert2_ing1.jpg" alt="dessert2_ing1">
+                    </div>
+                    <div class="recipe-steps">
+                        <div class="step">
+                            <img src="images/dessert2-1.jpg" alt="step1">
+                            <p>В чаше миксера соедините фисташковую муку (25г), обычную муку (200г), сахарную пудру (50г) и холодное сливочное масло (90г). Мешайте ингредиенты до образования мелкой крошки. Добавьте ровно 43 грамма яйца.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/dessert2-2.jpg" alt="step2">
+                            <p>У вас получится очень пластичное и гладкое тесто. Поделите его пополам, каждую часть раскатайте между двух листов пергамента до толщины 2 мм. Для этого используйте регулируемую  скалку или специальные металлические планки толщиной 2 мм. Оба пласта уберите в морозильную камеру на час.
+                            </p>
+                        </div>
+                        <div class="step">
+                            <img src="images/dessert2-3.jpg" alt="step3">
+                            <p>Дальше приготовьте силиконовую форму для маффинов Silikomart SF102. Диаметр формы примерно 70 мм, найдите рифлёную вырубку диаметром хотя бы 100-110 мм. В крайнем случае берите круглые вырубки, но будет не так красиво. Вырезайте по три ледяные заготовки и кладите их на перевёрнутую формы по центру.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/dessert2-4.jpg" alt="step4">
+                            <p>Выпекаем при 165 градусах примерно 17 минут. В первые 2-3 минуты вы заметите, что заготовки начали складываться, но не идеально ровно. Откройте духовку и просто рукой примните тесто там, где появляются волны. Фактически оберните силиконовый выступ мягким тестом. В процессе выпекания вы всё поймёте.</p>
+                        </div>
+                    </div>
+                    <h4>Фисташковый финансье</h4>
+                    <hr>
+                    <p></p>
+                    <div class="ingredients">
+                        <ul>
+                            <li>Масло сливочное 82,5% — 50г</li>
+                            <li>Фисташковая мука — 40г</li>
+                            <li>Пудра сахарная — 70г</li>
+                            <li>Мука — 35г</li>
+                            <li>Разрыхлитель — 1г</li>
+                            <li>Белок — 85г</li>
+                            <li>Мёд липовый — 10г</li>
+                            <li>Паста фисташковая — 20г</li>
+                        </ul>
+                        <img src="images/dessert2_ing2.jpg" alt="dessert2_ing2">
+                    </div>
+                    <div class="recipe-steps">
+                        <div class="step">
+                            <img src="images/dessert2-5.jpg" alt="step5">
+                            <p>Сливочное масло (50г) сложите в сотейник и грейте, помешивая венчиком до момента, когда вы почувствуете ореховый аромат, а само масло приобретёт карамельный цвет. Французы называют это «ореховое масло».</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/dessert2-6.jpg" alt="step6">
+                            <p>В небольшом мерном стакане пробейте блендером белки (85г). В чаше венчиком смешайте муку фисташки (40г) и сахарную пудру (70г), обычную муку (35г) и разрыхлитель (1г), добавьте белок. Удобнее всего мешать специальным венчиком.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/dessert2-7.jpg" alt="step7">
+                            <p>Затем фисташковая паста (20г) и липовый мёд (10г). В самом конце вводим сливочное масло с температурой около 45 градусов. Можно переложить тесто в большой кондитерский мешок.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/dessert2-8.jpg" alt="step8">
+                            <p>Я делал большой пласт финансье для другого десерта. Вам же подойдёт металлическое кольцо на 20 см или рамка 16х16 см. Вылейте тесто. Выпекайте на 160 градусах до готовности. Затем накройте пищевой плёнкой в контакт и дайте полностью остыть. Финансье можно заморозить или хранить в холодильнике 3-4 дня.</p>
+                        </div>
+                    </div>
+                    <h4>Малиновое желе</h4>
+                    <hr>
+                    <p></p>    
+                    <div class="ingredients">
+                        <ul>
+                            <li>Пюре малины — 150г</li>
+                            <li>Сахар — 30г</li>
+                            <li>Желатин листовой Ewald — 5г</li>
+                        </ul>
+                        <img src="images/dessert2_ing3.jpg" alt="dessert2_ing3">
+                    </div>
+                    <div class="recipe-steps">
+                        <div class="step">
+                            <img src="images/dessert2-9.jpg" alt="step9">
+                            <p>Замочите листовой желатин Ewald (5г) в ледяной воде. Используйте точные молекулярные весы, чтоб желатина было верное количество. Пюре малины (150г) с сахаром (30г) доведите в сотейнике до кипения. Снимите в плиты и добавьте отжатый желатин.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/dessert2-10.jpg" alt="step10">
+                            <p>Наполните все восемь ячеек силиконовой формы Silikomart SF004. Заморозьте.</p>
+                        </div>
+                    </div>
+                    <h4>Ванильный взбитый ганаш</h4>
+                    <hr>
+                    <p></p>    
+                    <div class="ingredients">
+                        <ul>
+                            <li>Шоколад Velvet — 70г</li>
+                            <li>Ваниль Таити — стручок</li>
+                            <li>Желатин Ewald — 3г</li>
+                            <li>Сливки 33% — 310г</li>
+                        </ul>
+                        <img src="images/dessert2_ing3.jpg" alt="dessert2_ing3">
+                    </div>
+                    <div class="recipe-steps">
+                        <div class="step">
+                            <img src="images/dessert2-11.jpg" alt="step11">
+                            <p>Замочите листовой желатин Ewald (3г) в ледяной воде. Один стручок ванили сорта Таити порежьте вдоль и соберите семена. Добавьте стручки и семена в сотейник с жирными сливками (310г). Доведите до первых пузырьков.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/dessert2-12.jpg" alt="step12">
+                            <p>Вылейте в мерный стакан с шоколадом (70г) и отжатым желатином. Стручки предварительно выньте, их можно промыть и подсушить в духовке (100 градусов, час), чтобы использовать в декоре. Пробейте ганаш блендером. Накройте плёнкой в контакт и уберите в холодильник для стабилизации.</p>
+                        </div>
+                    </div>
+                    <h4>Сборка</h4>
+                    <hr>
+                    <p></p>    
+                    <div class="recipe-steps">
+                        <div class="step">
+                            <img src="images/dessert2-13.jpg" alt="step13">
+                            <p>Подготовьте большой кондитерский мешок и насадку лепесток. Взбейте ганаш на средней скорости до очень устойчивых пиков. Так, чтоб даже когда вы слегка трясёте стакан, рисунок не менялся бы.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/dessert2-14.jpg" alt="step14">
+                            <p>В каждую тарталетку отсадите немного ганаша. И вырежьте финансье нужного диаметра с помощью круглых вырубок. Дальше по одной вынимайте из морозильной камеры малиновые заготовки. Насаживайте на шпажку и рисуйте ганашем розу.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/dessert2-15.jpg" alt="step15">
+                            <p>Сразу перенесите розу на тарталетку и дождитесь, пока малиновая начинка оттает, чтобы вынуть шпажку. Не ставьте розу на доску, иначе ганаш повредится. Готовые тарталетки убирайте в холодильник, чтобы оттаяла начинка, а ганаш снова стал плотнее. Декорируем изумрудной фисташкой и малиновыми криспами.</p>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+<!-- ДЕСЕРТ 4 -->
+        <div id="dessert4" hidden>
+            <div class="none">
+                <img class="bg_img" src="images/dessert4-main.jpg" alt="bg_img">
+            </div>
+            <div class="black">
+                <div class="name">
+                    <hr>
+                    <h1>Чизкейк с орехами и карамелью</h1>
+                    <hr>
+                </div>
+                <div class="recipe">
+                    <h4>Шоколадный бисквит (джоконда)</h4>
+                    <hr>
+                    <p></p>
+                    <div class="ingredients">
+                            <ul>
+                                <li>Белок — 75г</li>
+                                <li>Сахар мусковадо — 25г</li>
+                                <li>Желтки — 60г</li>
+                                <li>Яйца — 125г</li>
+                                <li>Сахар мусковадо — 110г</li>
+                                <li>Какао Van Houten — 15г</li>
+                                <li>Мука миндальная — 25г</li>
+                                <li>Мука — 35г</li>
+                            </ul>
+                            <img src="images/dessert4_ing1.jpg" alt="dessert4_ing1">
+                    </div>
+                    <div class="recipe-steps">
+                        <div class="step">
+                            <img src="images/dessert4-1.jpg" alt="step1">
+                            <p>В большом мерном стакане соедините белок (75г) и сахар мусковадо (25г). Взбейте миксером до красивой пены. </p>
+                        </div>
+                        <div class="step">
+                            <img src="images/dessert4-2.jpg" alt="step2">
+                            <p>В большой чаше соедините вторую часть сахара мусковадо (110г), яйца (125г) и желтки (60г). Также взбейте до пышной пены. Добавьте муку (35г), миндальную муку (25г) и какао-порошок Van Houten (15г).</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/dessert4-3.jpg" alt="step3">
+                            <p>Перемешайте тесто силиконовой лопаткой, стараясь делать плавные бережные движения. Дальше введите взбитый белок и также лопаткой объедините массы. Получится пышное, гладкое тесто.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/dessert4-4.jpg" alt="step4">
+                            <p>Выливаем тесто и распределяем. В конце пройдитесь планкой прям опираясь на бортик. Вы получите идеальную толщину (одинаковую в любой точке бисквита), это особенно важно для рулетов, но и нам пригодится.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/dessert4-5.jpg" alt="step5">
+                            <p>Выпекайте при 170 градусах до готовности, когда тесто не прилипает к рукам и слегка пружинит. Сразу накройте готовый бисквит пищевой плёнкой в контакт. Смотрите, когда он остынет мы сможем снять «корочку» и открыть поры.</p>
+                        </div>
+                    </div>
+                    <h4>Чизкейк орех-карамель</h4>
+                    <hr>
+                    <p></p> 
+                    <div class="ingredients">
+                        <ul>
+                            <li>Желатин листовой Ewald — 20г</li>
+                            <li>Молоко — 300г</li>
+                            <li>Шоколад Jivara — 60г</li>
+                            <li>Пралине фундук — 300г</li>
+                            <li>Сыр творожный — 200г</li>
+                            <li>Экстракт ванили — 8г</li>
+                            <li>Сливки 33% — 190г</li>
+                        </ul>
+                        <img src="images/dessert4_ing2.jpg" alt="dessert4_ing2">
+                    </div>  
+                    <div class="recipe-steps">         
+                        <div class="step">
+                            <img src="images/dessert4-6.jpg" alt="step6">
+                            <p>Замочите листовой желатин Ewald (20г) в ледяной воде. Используйте точные молекулярные весы, чтоб желатина было верное количество. Когда желатин станет мягким слейте воду и отожмите его. В сотейнике доведите до кипения молоко (300г). Вылейте его в мерный стакан с желатином.
+                            </p>
+                        </div>
+                        <div class="step">
+                            <img src="images/dessert4-7.jpg" alt="step7">
+                            <p>Добавьте в горячую массу шоколад Jivara (60г), пралине фундука (300г) и пробейте массу блендером. Добавьте мягкий (тёплый) творожный сыр (200г) и снова пробейте блендером.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/dessert4-8.jpg" alt="step8">
+                            <p>Добавьте натуральный экстракт ванили (8г). Перелейте массу в большую чашу и добавьте полувзбитые сливки (190г).</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/dessert4-9.jpg" alt="step9">
+                            <p>Оберните металлическое кольцо на 18 см пищевой плёнкой снизу. Внутрь вставьте ацетатную плёнку толщиной 40 или 130 мкм. Металлическим кольцом на 16 см вырежьте заготовку из бисквита. Дальше с помощью всё той же планки и ножа для пиццы нарежьте бортики шириной 6 см.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/dessert4-10.jpg" alt="step10">
+                            <p>Сначала ставим бортики из бисквита, а затем в центр кладём круглое дно. Выливаем основу чизкека. Уберите чизкейк в морозильную камеру на ночь.</p>
+                        </div>
+                    </div>
+                    <h4>Шоколадный ганаш</h4>
+                    <hr>
+                    <p></p> 
+                    <div class="ingredients">
+                        <ul>
+                            <li>Шоколад Araguani — 130г</li>
+                            <li>Сливки 33% — 190</li>
+                        </ul>
+                        <img src="images/dessert4_ing3.jpg" alt="dessert4_ing3">
+                    </div>   
+                    <div class="recipe-steps">        
+                        <div class="step">
+                            <img src="images/dessert4-11.jpg" alt="step11">
+                            <p>Доведите жирные сливки (150г) до кипения и вылейте в стакан с шоколадом Araguani (130г). Пробейте блендером.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/dessert4-12.jpg" alt="step12">
+                            <p>Вылейте на замёрзший чизкейк. Уберите в холодильник на 3-5 часов, чтобы слой ганаша полностью стабилизировался, за это время чизкейк начнёт оттаивать.</p>
+                        </div>
+                    </div>
+                    <h4>Взбитый ганаш</h4>
+                    <hr>
+                    <p></p>
+                    <div class="ingredients">
+                        <ul>
+                            <li>Сливки 33% — 110г</li>
+                            <li>Мёд липовый — 15г</li>
+                            <li>Шоколад Araguani — 40г</li>
+                            <li>Сливки 33% — 55г</li>
+                        </ul>
+                        <img src="images/dessert4_ing4.jpg" alt="dessert4_in42">
+                    </div> 
+                    <div class="recipe-steps">   
+                        <div class="step">
+                            <img src="images/dessert4-13.jpg" alt="step13">
+                            <p>Жирные сливки (110г) с мёдом (15г) доведите до кипения и вылейте в стакан с шоколадом Araguani (40г).Пробейте массу блендером.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/dessert4-14.jpg" alt="step14">
+                            <p>Влейте холодные сливки (55г) и снова пробейте блендером. Накройте пищевой плёнкой в контакт и уберите в холодильник на 10 часов. Очевидно, что этот ганаш лучше сделать в самом начале, а потом уже приступать ко всем другим операциям. Когда ганаш стабилизируется, взбейте его до состояния, когда он уже держит форму, но ещё не стал плотным или рыхлым.</p>
+                        </div>
+                    </div>
+                    <h4>Сборка</h4>
+                    <hr>
+                    <p></p> 
+                    <div class="recipe-steps">   
+                        <div class="step">
+                            <img src="images/dessert4-15.jpg" alt="step15">
+                            <p>Ягоду обваляйте в ложке нейтральной глазури. Это даст блеск и продлит срок хранения ягоды.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/dessert4-16.jpg" alt="step16">
+                            <p>На чизкейк нанесите взбитый ганаш лопаткой, посыпьте ягодами и мраморной шоколадной стружкой.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- ДЕСЕРТ 6 -->
+        <div id="dessert6" hidden>
+            <div class="none">
+                <img class="bg_img" src="images/dessert6-main.jpg" alt="bg_img">
+            </div>
+            <div class="black">
+                <div class="name">
+                    <hr>
+                    <h1>Трюфельные конфеты с вишней</h1>
+                    <hr>
+                </div>
+                <div class="recipe">
+                    <div class="ingredients">
+                        <ul>
+                            <li>Шоколад молочный 33,6% — 150г</li>
+                            <li>Шоколад карамельный Zephyr — 100г</li>
+                            <li>Боб Тонка — 1/2шт</li>
+                            <li>Пюре вишни — 150г</li>
+                            <li>Масло сливочное 82,5% — 60г</li>
+                        </ul>
+                        <img src="images/dessert6_ing1.jpg" alt="dessert6_ing1">
+                    </div>
+                    <div class="recipe-steps">
+                        <div class="step">
+                        <img src="images/dessert6-1.jpg" alt="step1">
+                        <p>Пюре вишни (150г) переложите в сотейник. Натрите на мелкой тёрке половину боба тонка. Поставьте сотейник на плиту и доведите пюре до кипения.
+                        </p>
+                        </div>
+                        <div class="step">
+                        <img src="images/dessert6-2.jpg" alt="step2">
+                        <p>В большом мерном стакане соберите молочный шоколад (150г) и карамельный шоколад Zephyr (100г). Вылейте на шоколад горячее пюре.</p>
+                        </div>
+                        <div class="step">
+                        <img src="images/dessert6-3.jpg" alt="step3">
+                        <p>Добавьте сливочное масло (60г). Обязательно пробейте блендером. Перелейте ганаш в большой кондитерский мешок, дайте ему остыть до 26-28 градусов.</p>
+                        </div>
+                        <div class="step">
+                        <img src="images/dessert6-4.jpg" alt="step4">
+                        <p>Подготовьте палетку капсул для трюфелей. Я использовал капсулы из молочного шоколада. Из мешка наполните все капсулы ганашем почти до самого верха. Оставьте в комнате (до 24 градусов) на 4-6 часов.</p>
+                        </div>
+                        <div class="step">
+                        <img src="images/dessert6-5.jpg" alt="step5">
+                        <p>Из мешка «закройте» капсулы шоколадом. Чтобы ускорить процесс стабилизации шоколада, можно подержать капсулы с ганашем в холодильнике 10-15 минут. Слегка постучите палетку, чтобы шоколад распределился. Когда шоколад на капсулах стабилизировался, наденьте перчатки. Макайте шарик в шоколад и слегка растирайте шарик в руках.</p>
+                        </div>
+                        <div class="step">
+                        <img src="images/dessert6-6.jpg" alt="step6">
+                        <p>Сразу бросьте его в чашу с какао-порошком и покачайте чашу, чтобы шарик полностью покрылся порошком. В чаше на фото я собирал по 6-7 шариков.</p>
+                        </div>
+                        <div class="step">
+                        <img src="images/dessert6-7.jpg" alt="step7">
+                        <p>Трюфели можно обмазывать разным шоколадом, обваливать в порошках сублимированных ягод или фруктов и так далее. Всё будет зависеть от вкуса внутри.</p>
+                        </div>
+                        <div class="step">
+                        <img src="images/dessert6-8.jpg" alt="step8">
+                        <p>Я люблю трюфели потому что они универсальны: хорошо хранятся, переживают любую поездку хоть на край света, хорошо выглядят и всегда подходят в качестве презента важным людям.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- САЛАТ 3 -->
+        <div id="salad3" hidden>
+            <div class="none">
+                <img class="bg_img" src="images/salad3-main.jpg" alt="bg_img">
+            </div>
+            <div class="black">
+                <div class="name">
+                    <hr>
+                    <h1>Салат капрезе с листьями корн</h1>
+                    <hr>
+                </div>
+                <div class="recipe">
+                    <div class="ingredients">
+                        <ul>
+                            <li>Помидоры — 2-3шт.</li>
+                            <li>Салат-корн — 50гр.</li>
+                            <li>Моцарелла — 1-2 шарика</li>
+                            <li>Оливковое масло EV — 30гр.</li>
+                        </ul>
+                        <img src="images/salad3_ing1.jpg" alt="salad3_ing1">
+                    </div>
+                    <div class="recipe-steps">
+                        <div class="step">
+                            <img src="images/salad3-1.jpg" alt="step1">
+                            <p>Берите как можно больше разных сортов помидор — здесь, конечно, от сезона больше зависит. Идеал: черные, красные, желтые помидоры, может быть даже несколько красных. Что это даёт? Объемность вкуса. </p>
+                        </div>
+                        <div class="step">
+                            <img src="images/salad3-2.jpg" alt="step2">
+                            <p>Поскольку базилик мы исключили, нужна какая-то горчинка. Займём её у зелёного лука.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/salad3-3.jpg" alt="step3">
+                            <p>И конечно, моцарелла. Белые шарики сочного и самого молодого из сыров. Бывают шарики побольше и поменьше, здесь смотрите сами, всё зависит от задуманной подачи. Для большого блюда хороши большие куски, для порционных — маленькие.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/salad3-4.jpg" alt="step4">
+                            <p>Сборка элементарная. Смазываете тарелку хорошим оливковым маслом (желательно EV). А дальше чередуете хаотично помидоры, моцареллу, листики корн. Сверху ещё раз щедро поливаем маслом, свежемолотый перец, щепотка крупной соли. Но самое важное, поджарьте на гриле чиабатту, ну или хотя бы багет. Вот этот самый тёплый хруст прекрасно сочетается с холодными мягкими овощами и сыром.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+<!-- САЛАТ 1 -->
+        <div id="salad1" hidden>
+            <div class="none">
+                <img class="bg_img" src="images/salad1-main.jpg" alt="bg_img">
+            </div>
+            <div class="black">
+                <div class="name">
+                    <hr>
+                    <h1>cалат с хрустящим луком и тыквой во фритюре</h1>
+                    <hr>
+                </div>            
+                <div class="recipe">
+                    <div class="ingredients">
+                        <ul>
+                            <li>Тыква — 500г</li>
+                            <li>Лук — 1шт</li>
+                            <li>Растительное масло — 1л</li>
+                            <li>Йогурт 3-5% — 100г</li>
+                            <li>Специи</li>
+                            <li>Мята и укроп</li>
+                        </ul>
+                        <img src="images/salad1_ing.jpg" alt="salad1_ing">
+                    </div>
+                    <div class="recipe-steps">
+                        <div class="step">
+                            <img src="images/salad1-1.jpg" alt="step1">
+                            <p>Возьмите хорошую большую луковицу и порежьте тонкими слойками в 2-3 мм. Я взял сладкий лук, чтобы он логичнее вписался в идею. Здесь можно использовать дополнительно фенхель или лук порей.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/salad1-2.jpg" alt="step2">
+                            <p>Далее налейте хорошее масло в узкую кастрюлю с толстым дном. Примерно 1 литр, так, чтобы высота слоя была не менее 4-5 см.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/salad1-3.jpg" alt="step3">
+                            <p>Тыкву (500г) очистите и порежьте кубиками в 2-3 см. Сорт берите тот, который больше всего нравится. Взамен тыквы может быть и картофель, и кабачки.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/salad1-4.jpg" alt="step4">
+                            <p>Обваляйте кубики тыквы в специях. Я взял красный острый чили, соль и чёрный молотый перец.
+                            </p>
+                        </div>
+                        <div class="step">
+                            <img src="images/salad1-5.jpg" alt="step5">
+                            <p>Поставьте масло на средне-сильный огонь. Когда оно будет достаточно прогрето, начните обжаривать лук.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/salad1-6.jpg" alt="step6">
+                            <p>Мы ждём хрустящего состояния, поэтому хорошая карамельная корочка будет ориентиром, что лук готов.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/salad1-7.jpg" alt="step7">
+                            <p>Переложите его на бумажное полотенце, чтобы полностью избавиться от лишнего жира.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/salad1-8.jpg" alt="step8">
+                            <p>На этом же масле начните обжаривать тыкву. Здесь важно делать это частями, чтобы кубики быстро и равномерно прожаривались.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/salad1-9.jpg" alt="step9">
+                            <p>В это время можно мелко порубить мяту и укроп.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/salad1-10.jpg" alt="step10">
+                            <p>Лёгкая корочка будет ориентиром, что тыква готова. Также просушите её от жира с помощью бумажных полотенец.</p>
+                        </div>
+                        <div class="step">
+                            <img src="images/salad1-11.jpg" alt="step11">
+                            <p>Соберите салат в тарелке, соединив лук и тыкву, добавив рубленную зелень и заправку из нейтрального йогурта или сметаны. Подавайте с хрустящими гренками из ржаной муки.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- САЛАТ 7 -->
+        <div id="salad7" hidden>
+            <div class="none">
+                <img class="bg_img" src="images/salad7-main.jpg" alt="bg_img">
+            </div>
+            <div class="black">
+                <div class="name">
+                    <hr>
+                    <h1>Салат Нисуаз с тунцом и фирменной заправкой</h1>
+                    <hr>
+                </div>            
+                <div class="recipe">
+                    <div class="ingredients">
+                        <ul>
+                            <li>Картофель — 1шт.</li>
+                            <li>Тунец — 100гр.</li>
+                            <li>Яйцо — 1шт.</li>
+                            <li>Черри — 5-6шт.</li>
+                            <li>Руккола — 100гр.</li>
+                            <li>Лимон — 1шт.</li>
+                            <li>Горчица — 1ст.л.</li>
+                            <li>Оливковое масло — 2ст.л.</li>
+                        </ul>
+                        <img src="images/salad7_ing1.jpg" alt="salad7_ing1">
+                    </div>
+                    <div class="recipe-steps">
+                        <div class="step">
+                            <img src="images/salad7-1.jpg" alt="step1">
+                            <p>Сперва возьмёмся за долгие ингредиенты: варим яйцо в крутую и картофель. Я делаю это в одном сотейнике, просто яйцо вынимаем чуть раньше (я варю 5 минут после того, как холодная вода дойдет до кипения). </p>
+                        </div>
+                        <div class="step">
+                            <img src="images/salad7-2.jpg" alt="step2">
+                            <p>В это же время готовим тунца. Если у вас консервированный — просто достаете из банки без масла и немного разделяете на кусочки. Если же у вас филе, готовим стейк. На обычной или гриль сковороде обжариваем тунца так, чтобы серединка оставалась сыроватой, розовой. В принципе удобно следить за этим сбоку. То есть делаем так, чтобы розовая серединка составляла четверть от всей толщины филе. </p>
+                        </div>
+                        <div class="step">
+                            <img src="images/salad7-3.jpg" alt="step3">
+                            <p>Обычно к готовности тунца и картофель тоже готов. Режем картофель кубиками 1 см, яйца тонкими дольками (где-то 6-8 частей). </p>
+                        </div>
+                        <div class="step">
+                            <img src="images/salad7-4.jpg" alt="step4">
+                            <p>Режем черри и тунца. </p>
+                        </div>
+                        <div class="step">
+                            <img src="images/salad7-5.jpg" alt="step5">
+                            <p>Теперь самое интересное. Моя любимая заправка. И секрет Джейми Оливера. Чтобы сделать хорошую заправку — нужно смешивать ингредиенты в баночке с крышкой. Только так возможно смешать масло и другие ингредиенты до однородности. Итак, в баночку кладем горчицу (1 ст.л.), оливковое масло (2 ст.л.), соль, перец, и лимонный сок (1 ст.л.). Здесь можно добавить ещё бальзамика или мёд — уже по вашему вкусу. А теперь хорошо закрываем крышкой и взбалтываем минуты 2-3. Вот он, секрет Оливера, который поможет добиться исключительной текстуры заправки. </p>
+                        </div>
+                        <div class="step">
+                            <img src="images/salad7-6.jpg" alt="step6">
+                            <p>Теперь остаётся сложить все ингредиенты в чашку, добавить заправку, хорошо перемешать и выложить в тарелку.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- МЯСО 2 -->
+        <div id="meat2" hidden>
+    <div class="none">
+        <img class="bg_img" src="images/meat2-main.jpg" alt="bg_img">
+    </div>
+    <div class="black">
+        <div class="name">
+            <hr>
+            <h1>Бургер, способный довести до безумия</h1>
+            <hr>
+        </div>            
+        <div class="recipe">
+            <div class="ingredients">
+                <ul>
+                    <li>Булка — 1-2 шт</li>
+                    <li>Лук сладкий — 200 г</li>
+                    <li>Чили острый — 2 шт</li>
+                    <li>Острый соус — 1 ст.л.</li>
+                    <li>Фарш говяжий — 250 г</li>
+                    <li>Фарш свиной — 250 г</li>
+                    <li>Яйцо — 1 шт</li>
+                    <li>Сухари панировочные — 2 ст.л.</li>
+                </ul>
+                <img src="images/meat2_ing1.jpg" alt="meat2_ing1">
+            </div>
+            <div class="recipe-steps">
+                <div class="step">
+                    <img src="images/meat2-1.jpg" alt="step1">
+                    <p>Лук (200 г) порежьте крупными полукольцами, толщина от 6 до 12 мм. Я взял сладкий лук, потому что именно такой вкус нам и понадобится в итоге. Раскалите сковороду, налейте оливковое масло. Затем понизьте огонь и начните обжаривать лук. Мы жарим его до полной карамелизации, то есть очень хорошего прожаренного состояния.</p>
+                </div>
+                <div class="step">
+                    <img src="images/meat2-2.jpg" alt="step2">
+                    <p>Пока луж жарится, измельчите пару острых перцев Чили (у меня были по 7 см в длину). Понятно, что можно взять любой острый перец (халапеньо, например), или даже чеснок.</p>
+                </div>
+                <div class="step">
+                    <img src="images/meat2-3.jpg" alt="step3">
+                    <p>Теперь в чаше соединим говяжий (250 г) и свиной (250 г) фарши. Туда же добавляем пару столовых ложек панировочных сухарей. Всё хорошо перемешиваем руками, а потом мокрыми (чтоб мясо не липло) формируем котлеты. У меня получилась одна, размером 16х3 см. Можно сделать пару 8х2,5. В любом случае, нам нужна толстая хорошая котлетка.</p>
+                </div>
+                <div class="step">
+                    <img src="images/meat2-4.jpg" alt="step4">
+                    <p>В это время готовим булочки, разрезая их пополам. Лук уже подойдет, и мы вливаем 1-2 ст.л. белого винного уксуса. Он здесь идеален! Если белого винного нет, берите красный винный или обычный яблочный (6%). Других альтернатив нет.</p>
+                </div>
+                <div class="step">
+                    <img src="images/meat2-5.jpg" alt="step5">
+                    <p>Разогреваем сковороду или гриль. Начинаем обжаривать мясо. При толщине в 3 см, я обжаривал котлету по 3 минуты с каждой стороны. Не нужно её переворачивать каждую минуту, посто следите за боками, как только она приобретёт цвет до середины, переворачивайте. </p>
+                </div>
+                <div class="step">
+                    <img src="images/meat2-6.jpg" alt="step6">
+                    <p>Не забудьте обжарить срезы булочек, это поможет оставить сочность внутри, а не размочить булку. При этом мы получаем дополнительный хруст.</p>
+                </div>
+                <div class="step">
+                    <img src="images/meat2-7.jpg" alt="step7">
+                    <p>Не забудьте горячей котлетой растопить сыр Чеддер (100 г).</p>
+                </div>
+                <div class="step">
+                    <img src="images/meat2-8.jpg" alt="step8">
+                    <p>Далее просто собираем бургер: лист салата (или руккола), пару слайсов свежего помидора, котлета, большая охапка лука и, моё любимое, хрустящие корнишоны.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+<!-- МЯСО 8 -->
+        <div id="meat8" hidden>
+    <div class="none">
+        <img class="bg_img" src="images/meat8-main.jpg" alt="bg_img">
+    </div>
+    <div class="black">
+        <div class="name">
+            <hr>
+            <h1>Стейк с соусом из черного перца</h1>
+            <hr>
+        </div>            
+        <div class="recipe">
+            <div class="ingredients">
+                <ul>
+                    <li>Лучшие отрубы, которые сможете купить</li>
+                    <li>Сливочное масло — 30 гр.</li>
+                    <li>Хорошие соль и перец</li>
+                    <li>Сливочное масло — 30 гр.</li>
+                    <li>Шалот — 1 шт.</li>
+                    <li>Черный перец горошек — 30 гр.</li>
+                    <li>Говяжиый бульон — 250 гр.</li>
+                    <li>Сливки 20% — 250 гр.</li>
+                </ul>
+                <img src="images/meat8_ing1.jpg" alt="meat8_ing1">
+            </div>
+            <div class="recipe-steps">
+                <div class="step">
+                    <img src="images/meat8-1.jpg" alt="step1">
+                    <p>Возьмите лучший перец горошком (25-30 гр.), какой сможете найти. Если это будет смесь перцев — даже лучше. Рассыпьте его по разделочной доске и дном сотейника размолите. Делайте это так, под небольшим углом ставьте дно на перец и, прижимая, ведите сотейник от себя. Если будете просто сверху надавливать на сотейник, перец будет очень сложно размолоть.</p>
+                </div>
+                <div class="step">
+                    <img src="images/meat8-2.jpg" alt="step2">
+                    <p>Порежьте очень мелко луковицу шалота. На большой сковороде с толстым дном растопите кубик сливочного масла. Обжаривайте лук и рубленный чеснок (2 зубчика) до прозрачности. </p>
+                </div>
+                <div class="step">
+                    <img src="images/meat8-3.jpg" alt="step3">
+                    <p>Влейте говяжий бульон (250 гр.). Можно, конечно, обойтись кипятком, но если будет бульон, получится только вкуснее. Выпарите влагу на максимальном огне вдвое. На это уйдет минут 10. Влейте жирные сливки (около 20%, 250 гр.). Снова выпариваем жидкость вдвое. И всыпаем молотый перец. Добавляйте по трети и смотрите, как получится. Если покажется, что слишком много перца, не добавляйте какую-то часть. </p>
+                </div>
+                <div class="step">
+                    <img src="images/meat8-4.jpg" alt="step4">
+                    <p>Готовность любого соуса определяется очень просто. Он должен покрывать ложку (лопатку) и не стекать с неё. При этом не быть черезчур густым. Помните, что, остывая, соус начнёт густеть. Поэтому в сковороде он должен быть средней густоты. Соус переливаем в соусник. Если хотите сделать соус профессионально, пюрируйте его блендером и пропустите через среднее сито. Тогда он станет более однородным и кремовым.</p>
+                </div>
+                <div class="step">
+                    <img src="images/meat8-5.jpg" alt="step5">
+                    <p>Дальше стейк. Самое сложное выбрать хороший кусок, дальше всё просто. Промокните мясо салфеткой со всех сторон. Нам не нужна лишняя влага снаружи, иначе корочка будет не такой красивой. Поставьте сковороду на самый сильный огонь, профи говорят, нужно дождаться момента, когда она буквально начнёт дымить. Снова бросьте кубик сливочного масла. </p>
+                </div>
+                <div class="step">
+                    <img src="images/meat8-6.jpg" alt="step6">
+                    <p>Мясо посыпаем солью и молотым перцем за минуту до того, как будете обжаривать стейк, слегка похлопывая ладонью, чтобы специи лучше прилипнут.</p>
+                </div>
+                <div class="step">
+                    <img src="images/meat8-7.jpg" alt="step7">
+                    <p>Опускаете кусок мясо на сковороду. Не двигайте его, не приминайте. Ничего не делайте. Идея стейка в том, что мы запечатываем внутри куска мяса сок. Для этого мы и обжариваем его до хорошей корочки. Я делаю так, кладу кусок на сковороду, и смотрю на торец. Когда мясо поменяло цвет снизу на треть,  переворачиваете его на другую сторону. И снова ждём. Обычно на это нужно от 2 до 3 минут с каждой стороны. Кто-то рекомендует переворачивать каждую минуту, мне кажется это лишние действия.</p>
+                </div>
+                <div class="step">
+                    <img src="images/meat8-8.jpg" alt="step8">
+                    <p>Важно дать мясу «отдохнуть». Для этого кладёте его на тарелку и минут 10-15 ждете. В это время сок, который сконцетрировался в центре куска, распределяется обратно, делая мясо равномерно сочным. Подаём стейк с нашим соусом и обязательно зубчатым ножом! </p>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+<!-- МЯСО 4 -->
+        <div id="meat4" hidden>
+    <div class="none">
+        <img class="bg_img" src="images/meat4-main.jpg" alt="bg_img">
+    </div>
+    <div class="black">
+        <div class="name">
+            <hr>
+            <h1>Рыцарская птица для новогоднего стола</h1>
+            <hr>
+        </div>            
+        <div class="recipe">
+            <div class="ingredients">
+                <ul>
+                    <li>Курица — 1 шт</li>
+                    <li>Сливочное масло — 20+ г</li>
+                    <li>Чеснок — 2-3 зубчика</li>
+                    <li>Яблоко — 1/2</li>
+                    <li>Панировочные сухари — 2 ст.л.</li>
+                    <li>Фарш — 150 г</li>
+                    <li>Лук — 1/2 шт</li>
+                    <li>Орехи — 30 г</li>
+                    <li>Бекон — 8 полосок</li>
+                    <li>Свежие травы</li>
+                </ul>
+                <img src="images/meat4_ing1.jpg" alt="meat4_ing1">
+            </div>
+            <div class="recipe-steps">
+                <div class="step">
+                    <img src="images/meat4-1.jpg" alt="step1">
+                    <p>Порубите мягкое сливочное масло (20 г). Мелко пару зубчиков чеснока. Половину хорошей луковицы. Я добавил немного арахиса (30 г), который тоже измельчил. Просто так в начинке будет структура какая-то хрустящая. Также, мелким кубиком режем половину яблока. Соедините все это вместе с фаршем (у меня свинина+говядина, 150 г), панировочными сухарями (2 ст.л.). Соедините руками, чтобы получился однородный фарш.</p>
+                </div>
+                <div class="step">
+                    <img src="images/meat4-2.jpg" alt="step2">
+                    <p>Теперь подготовим курицу. Желательно, чтобы она была комнатной температуры, то есть достаньте её из холодильника хотя бы за час. Всегда начинаем с того, что протираем её очень тщательно сухими салфетками. Влага мешает образованию корочки и выпеканию в целом.</p>
+                </div>
+                <div class="step">
+                    <img src="images/meat4-3.jpg" alt="step3">
+                    <p>Затем плотно начиняем курицу нашим фаршем. Кроме того, что у нас получится некоторый гарнир к ней, мы ещё и помогаем курице сохранить форму (именно поэтому иногда её насаживают на жестяные банки). С помощью зубочистки или двух закрепите кожу так, чтобы начинка прочно держалась внутри. А ноги свяжите бечевкой. Все эти тонкости помогут курице остаться в том же виде после духовки.</p>
+                </div>
+                <div class="step">
+                    <img src="images/meat4-4.jpg" alt="step4">
+                    <p>Щедро смажьте курицу снаружи мягким сливочным маслом. Теперь наш декор. Берите бекон. Лучше, если это будет заводская тонкая нарезка и чтобы мясной прослойки было больше. Можно использовать даже хамон. Нарежьте полоски бекона на две части, чтобы было удобнее работать. А дальше прилепляйте кусочки в нахлест ёлочкой.</p>
+                </div>
+                <div class="step">
+                    <img src="images/meat4-5.jpg" alt="step5">
+                    <p>В форму или противень на дно выложите любимые травы. У меня это свежий тимьян, можно взять розмарин, лавровый лист и так далее. Сверху выкладываем аккуратно курицу. И плотно накрываем фольгой, зеркальной стороной вверх. С одной стороны мы не даём раньше времени курице запечься сверху (иначе бекон просто сгорит), а с другой, помогаем бекону нагреться и принять форму курицы.</p>
+                </div>
+                <div class="step">
+                    <img src="images/meat4-6.jpg" alt="step6">
+                    <p>Выпекать будем в духовке, разогретой до 180 градусов. Время зависит от размера курицы. У меня ушло где-то полтора часа. Причем за 25 минут до конца, я снял фольгу, и как раз в этот момент наш панцирь стал румяниться. Готовность птицы определить очень легко — проколите её ножом в самый толстый участок мяса, если сок выходит прозрачный, значит она готова. Передерживать её не стоит, иначе она будет сухой, тем более белое мясо.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+
+    </main>
+    <footer>
+        <p>&copy; Все рецепты и фото взяты с сайта <a href="https://andychef.ru/" target="_blank">ЭндиШеф</a></p>
+    </footer>
+
+<script src="script.js"> </script>
+ 
+</body>
+</html>
