@@ -1,96 +1,296 @@
-let locations = []
+'use strict'
+// локации
 const login = document.querySelector('#login') 
 const mainMenu = document.querySelector('#mainMenu') 
 const desserts = document.querySelector('#desserts') 
 const meat = document.querySelector('#meat') 
 const salads = document.querySelector('#salads') 
-const dessert1 = document.querySelector('#dessert2') 
-const dessert2 = document.querySelector('#dessert4') 
-const dessert3 = document.querySelector('#dessert6') 
-const salad1 = document.querySelector('#salad3') 
-const salad2 = document.querySelector('#salad1') 
-const salad3 = document.querySelector('#salad7') 
-const meat1 = document.querySelector('#meat2') 
-const meat2 = document.querySelector('#meat8') 
-const meat3 = document.querySelector('#meat4') 
+const allRecipies = document.querySelectorAll('.reci') 
+const myBook = document.querySelector('#myBook')
+const mydesserts = document.querySelector('#mydesserts')
+const mysalads = document.querySelector('#mysalads')
+const mymeat = document.querySelector('#mymeat')
 
-locations.push(login, mainMenu, desserts, meat, salads, dessert1, dessert2, dessert3, salad1, salad2, salad3, meat1, meat2, meat3)
+let locations = []
+locations.push(login, mainMenu, myBook, desserts, meat, mysalads, mydesserts, mymeat, salads)
+allRecipies.forEach(r => locations.push(r))
 
+// кнопки и формы
 const formLogin = document.querySelector('.formlogin') 
 const loginInput = document.querySelector('#inputLogin') 
+const registration = formLogin.querySelector('a')
 const passwordInput = document.querySelector('#inputPassword') 
+const wrongPass = document.querySelector('.wrongPass')
+const account = document.querySelector('#account') 
+const myRecipies = document.querySelector('#myRecipies')
+
+let addRecipe = document.querySelectorAll('.addRecipe')
+let deleteRecipe = document.querySelectorAll('.deleteRecipe')
+addRecipe.forEach(el => el.addEventListener('click', addDelete))
+deleteRecipe.forEach(el => el.addEventListener('click', addDelete))
 
 
+// localstorage
 let currentUser = localStorage.getItem('active')
 let users = JSON.parse(localStorage.getItem('users')) || {}
+let comments = JSON.parse(localStorage.getItem('comments')) || {}
 
+// comments
+const FormsComment = document.querySelectorAll('.addComment')
+
+//регистрация и вход
+registration.addEventListener('click', function(e){
+    e.preventDefault()
+    registration.innerHTML === 'Регистрация' ? registration.innerHTML = 'Вход' : registration.innerHTML = 'Регистрация'
+    let submitButton = formLogin.querySelector('button')
+
+    submitButton.innerHTML === 'Зарегистрироваться' ? submitButton.innerHTML = 'Войти' :submitButton.innerHTML = 'Зарегистрироваться'
+    wrongPass.hidden = true
+
+
+
+})
 
 // вход в личный кабинет 
 formLogin.addEventListener('submit', function (e) {
     e.preventDefault()
-    if (loginInput.value) {
-        currentUser = loginInput.value
-        localStorage.setItem('active', loginInput.value)
-        location.hash = '#notes'
-        console.log(currentUser)
+    currentUser = loginInput.value
+    localStorage.setItem('active', loginInput.value)
+    localStorage.setItem('users', loginInput.value)
+
+    if (!loginInput.value || !passwordInput.value) {
+        wrongPass.innerHTML = 'Необходимо ввести все данные пользователя'
+        wrongPass.hidden = false
+    } else {
+        let submitButton = formLogin.querySelector('button')
+        if(submitButton.innerHTML === 'Войти') {
+            if(!users[currentUser]){
+                wrongPass.innerHTML = 'Такого пользователя нет в базе.'
+                wrongPass.hidden = false
+            } else {
+                if (users[currentUser].pass !== passwordInput.value){
+                    passwordInput.value = ''
+                    wrongPass.innerHTML = 'Пароль введен неверно. Повторите попытку.'
+                    wrongPass.hidden = false
+                } else {
+                    location.hash = '#mainMenu'
+                    registration.innerHTML = 'Регистрация'
+                    submitButton.innerHTML = 'Войти'
+                }
+            }
+        } else { 
+            if(users[currentUser]) {
+                wrongPass.innerHTML = 'Выбранное Вами имя пользователя уже занято.'
+                wrongPass.hidden = false
+            } else {
+                users[currentUser] = {}
+                users[currentUser].pass = passwordInput.value
+                users[currentUser].desserts = []
+                users[currentUser].salads = []
+                users[currentUser].meat = []
+                users[currentUser].recipies = []
+                location.hash = '#mainMenu'
+                registration.innerHTML = 'Регистрация'
+                submitButton.innerHTML = 'Войти'
+            }
+    
+        }
+    
     }
+    localStorage.setItem('users', JSON.stringify(users))
+    myMenu()
+
 })
 
+
+//переход на другую страницу
 function locationChanged() {
     locations.forEach(el => {
         el.hidden = true
-        console.log(el)
     })
+    if (location.hash && location.hash !== '#login') {
+        refreshComments ()
+        if(users[currentUser]) {
+            document.querySelector(location.hash).hidden = false
+            account.hidden = false
+            myRecipies.hidden = false
+            wrongPass.hidden = true
+            doYouHaveThisOne()    
+        } else {
+            location.hash = '#login'
+        }
+    } else {
+        loginInput.value = passwordInput.value = ''
+        account.hidden = true
+        myRecipies.hidden = true
+        localStorage.removeItem('active')
+        login.hidden = false
+    }
+    window.scrollTo(0, -Infinity)
 
-    // switch (location.hash) {
-    //     case '#login':
-    //     case '':
-    //         if (!currentUser) {
-    //             login.hidden = false
-    //         } else {
-    //             location.href = '#notes'
-    //         }
-    //         break
-    //     case '#notes':
-    //         if (currentUser) {
-    //             notesContainer.innerHTML = ''
-    //             if (users[currentUser]) {
-    //                 users[currentUser].forEach(addNote)
-    //             }
-    //             notes.hidden = false
-    //             menu.hidden = false
-    //         } else {
-    //             location.href = '#login'
-    //         }
-    //         break
-    //     case '#all':
-    //         if (currentUser) {
-    //             all.hidden = false
-    //             menu.hidden = false
-    //             showAllNotes()
-    //         } else {
-    //             location.href = '#login'
-    //         }
-    //         break
-    //     case '#logout':
-    //         currentUser = null
-    //         localStorage.removeItem('currentUser')
-    //         location.href = '#login'
-    //         break
-    //     default:
-    //         login.hidden = false
-    // }
+
 }
 
+// удаление и добавление нового блюда
+function addDelete (e) {
+    let Name = location.hash.slice(1)
+    let type 
+    Name.slice(0,5) === 'salad' ? type = 'salads' :
+    Name.slice(0,7) === 'dessert' ? type = 'desserts' : type = 'meat'
+    if(e.target.className === 'addRecipe') {
+        users[currentUser][type].unshift(Name)
+        users[currentUser].recipies.unshift(Name)
+        e.target.hidden = true
+        e.target.parentElement.querySelector('.deleteRecipe').hidden = false
+        changeMy (type)
+        myMenu()
+    } else {
+        let i = users[currentUser][type].indexOf(Name)
+        let ind = users[currentUser].recipies.indexOf(Name)
+        users[currentUser][type].splice(i, 1)
+        users[currentUser].recipies.splice(ind, 1)
+        e.target.hidden = true
+        e.target.parentElement.querySelector('.addRecipe').hidden = false
+        changeMy (type)
+        myMenu()
+    }
+    localStorage.setItem('users', JSON.stringify(users))
+}
 
-window.addEventListener('hashchange', locationChanged)
-// locationChanged()
+//отрисовка всего личного меню
+function myMenu () {
+    if (users[currentUser]){
+        let cards = myBook.querySelectorAll('a')
+        let images = []
+        cards.forEach(card => {
+            let image = card.querySelector('img')
+            card.hidden = true
+            images.push(image)
+        })
+        let data = [users[currentUser].desserts[0], users[currentUser].meat[0], users[currentUser].salads[0]]
+        data.forEach(d => {
+            let i = data.indexOf(d)
+            if(d) {
+                images[i].src = `images/${d}-main.jpg`
+                cards[i].hidden = false
+            }
+        })
+    }
+}
+myMenu()
+ 
+// отрисовка разделов личного меню
+function changeMy (a) {
+    let my = document.querySelector(`#my${a} .menu-container`)
+    let myInner = []
+    
+    if (users[currentUser][a][0]) {
+        let current = users[currentUser][a]
 
+        current.forEach(el => {
+            let string = `<a href="#${el}">
+            <div class="card">
+                <img src="images/${el}-main.jpg" alt="${el}">
+                <h4>${document.querySelector(`#${el} h1`).innerHTML}</h4>
+            </div>
+        </a>`
+            myInner.push(string)
+        })
+        my.innerHTML = myInner
+    
+    } else {
+        my.innerHTML = ''
+    }
+}
+if (users[currentUser]) {
+    changeMy ('desserts')
+    changeMy ('salads')
+    changeMy ('meat')
+}
 
+//проверка или рецепт есть у пользователя (кнопка добавить/удалить)
+function doYouHaveThisOne () {
+    let recipeName = location.hash.slice(1)
+    if (users[currentUser].recipies.indexOf(recipeName) === -1){
+        addRecipe.forEach(el => el.hidden = false)
+        deleteRecipe.forEach(el => el.hidden = true)    
+    } 
+    if (users[currentUser].recipies.indexOf(recipeName) !== -1) {
+        addRecipe.forEach(el => el.hidden = true)
+        deleteRecipe.forEach(el => el.hidden = false)    
+    }
+}
 
+// добавление комментариев
+FormsComment.forEach(form => {
+    form.addEventListener('submit', function(e){
+        e.preventDefault()
+        let comment = form.querySelector('textarea')
+        let newComment = `<div class="comment">
+        <p>${currentUser}</p>
+        <div class="commentText">
+            <p>${comment.value}</p>
+            <div class="redact">
+                <img src="images/delete.png" class="imgDelete" alt="delete">
+                <img src="images/edit.png" class="imgEdit" alt="edit">
+            </div>
+        </div>    
+    </div>`
+        if (!comments[location.hash]){
+            comments[location.hash] = []
+        }  
+        comments[location.hash].unshift(newComment)
+        comment.value = ''
+        refreshComments ()
+        deleteComment(e)
 
+        localStorage.setItem('comments', JSON.stringify(comments))
 
+    })
+})
 
+// вывод комментариев
+function refreshComments (){
+    let Inner = document.querySelector(`${location.hash}`).querySelector('.allComments')
+    if (Inner) {
+        // Inner.innerHTML = comments[location.hash]
+        Inner.innerHTML = []
+        let prev = document.querySelector(`${location.hash} .previous`)
+
+        if (comments[location.hash]) {
+            comments[location.hash].forEach(comment => {
+                let com = document.createElement('div')
+                com.innerHTML = comment
+                Inner.append(com)
+                prev.hidden = false
+            })
+    
+        } else {
+            prev.hidden = true
+
+        }
+    }
+    showComments ()
+}
+
+// как показываются комментарии для конкретного пользователя
+function showComments (){
+    let DIV = document.querySelector(`${location.hash} .comments`)
+    if(DIV){
+        let Name = DIV.querySelector('form label')
+        Name.innerHTML = currentUser
+        let redactors = document.querySelectorAll('.redact')
+        redactors.forEach(red => {
+            red.hidden = true
+            let n = red.parentElement.parentElement.querySelector('p').innerHTML
+            if (n === currentUser) {
+                red.hidden = false
+            }
+        })
+    
+    }
+
+}
 
 // появление надписи по буквам
 function typeText (){
@@ -113,3 +313,7 @@ function typeText (){
     typeLine()
 }
 typeText()
+
+
+window.addEventListener('hashchange', locationChanged)
+locationChanged()

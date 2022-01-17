@@ -12,14 +12,15 @@
 <body>
     <header>
         <div class="header_container">
-            <h1 class="andy type">Andy Chef</h1>
-            <!-- <div class="header header1"></div> -->
-            <div class="header header2">выйти</div>
+            <a href="#mainMenu"><h1 class="andy type">Andy Chef</h1></a>
+            <div class="header header2">
+                <a href="#myBook" id='myRecipies'>Мои рецепты</a>
+                <a href="#login" id="account">Выход</a></div>
         </div>
     </header>
     <main>
 <!-- ЛОГИН -->
-        <div id="login" >
+        <div id="login">
             <img class="bg_img" src="images/index_bg.jpg" alt="bg_img">
             <div class="bg"></div>
             <div class="login-container">
@@ -33,12 +34,14 @@
                         <label for="password">Пароль:</label>
                         <input type="password" id="inputPassword" placeholder="введите пароль">    
                     </div>
-                    <button class="button" type="submit">Войти</button>
+                    <div class="wrongPass" hidden></div>
+                    <button class="button" type="submit">Войти</button> <br> <br>
+                    <a href="">Регистрация</a>
                 </form>
             </div>
         </div>
 <!-- ГЛАВНОЕ МЕНЮ -->
-        <div id="mainMenu" hidden>
+        <div id="mainMenu">
             <img class="bg_img" src="images/index_bg.jpg" alt="bg_img">
             <div class="bg"></div>
             <div class="menu-container">
@@ -48,13 +51,13 @@
                         <h4>Десерты</h4>
                     </div>
                 </a>
-                <a href="meat">
+                <a href="#meat">
                     <div class="card">
                         <img src="images/meat2-main.jpg" alt="meat2">
                         <h4>Мясные блюда</h4>
                     </div>
                 </a>
-                <a href="salads">
+                <a href="#salads">
                     <div class="card">
                         <img src="images/salad3-main.jpg" alt="salad3">
                         <h4>Салаты</h4>
@@ -64,7 +67,7 @@
         </div>
 
 <!-- ДЕСЕРТЫ -->
-        <div id="desserts" hidden>
+        <div id="desserts"  >
             <img class="bg_img" src="images/desserts_bg.jpg" alt="bg_img">
             <div class="bg"></div>
             <div class="menu-container">
@@ -74,26 +77,23 @@
                         <h4>ВАНИЛЬНАЯ ТАРТАЛЕТКА С МАЛИНОЙ И ФИСТАШКОЙ</h4>
                     </div>
                 </a>
-                <a href="dessert4">
+                <a href="#dessert4">
                     <div class="card">
                         <img src="images/dessert4-main.jpg" alt="dessert4">
                         <h4>ЧИЗКЕЙК С ОРЕХАМИ И КАРАМЕЛЬЮ</h4>
                     </div>
                 </a>
-                <a href="dessert6">
+                <a href="#dessert6">
                     <div class="card">
                         <img src="images/dessert6-main.jpg" alt="dessert6">
                         <h4>ТРЮФЕЛЬНЫЕ КОНФЕТЫ С ВИШНЕЙ</h4>
                     </div>
                 </a>
             </div>  
-            <div class="newRecipe">
-                + Добавить новый рецепт
-            </div>
         </div>
 
 <!-- МЯСО -->
-        <div id="meat" hidden >
+        <div id="meat"   >
             <img class="bg_img" src="images/meat_bg.jpg" alt="bg_img">
             <div class="bg"></div>
             <div class="menu-container">
@@ -103,26 +103,23 @@
                         <h4>БУРГЕР, СПОСОБНЫЙ ДОВЕСТИ ДО БЕЗУМИЯ</h4>
                     </div>
                 </a>
-                <a href="meat8">
+                <a href="#meat8">
                     <div class="card">
                         <img src="images/meat8-main.jpg" alt="meat">
                         <h4>СТЕЙК С СОУСОМ ИЗ ЧЕРНОГО ПЕРЦА</h4>
                     </div>
                 </a>
-                <a href="meat4">
+                <a href="#meat4">
                     <div class="card">
                         <img src="images/meat4-main.jpg" alt="meat">
                         <h4>РЫЦАРСКАЯ ПТИЦА ДЛЯ НОВОГОДНЕГО СТОЛА</h4>
                     </div>
                 </a>
             </div>  
-            <div class="newRecipe">
-                + Добавить новый рецепт
-            </div>
         </div>
 
 <!-- САЛАТЫ -->
-        <div id="salads" hidden>
+        <div id="salads"  >
             <img class="bg_img" src="images/salad_bg.jpg" alt="bg_img">
             <div class="bg"></div>
             <div class="menu-container">
@@ -132,28 +129,49 @@
                         <h4>САЛАТ КАПРЕЗЕ С ЛИСТЬЯМИ КОРН</h4>
                     </div>
                 </a>
-                <a href="salad1">
+                <a href="#salad1">
                     <div class="card">
                         <img src="images/salad1-main.jpg" alt="salad1">
                         <h4>CАЛАТ С ХРУСТЯЩИМ ЛУКОМ И ТЫКВОЙ ВО ФРИТЮРЕ</h4>
                     </div>
                 </a>
-                <a href="salad7">
+                <a href="#salad7">
                     <div class="card">
                         <img src="images/salad7-main.jpg" alt="salad7">
                         <h4>САЛАТ НИСУАЗ С ТУНЦОМ И ФИРМЕННОЙ ЗАПРАВКОЙ</h4>
                     </div>
                 </a>
             </div>  
-            <div class="newRecipe">
-                + Добавить новый рецепт
-            </div>
+        </div>
+
+<!-- МОИ ДЕСЕРТЫ -->
+        <div id="mydesserts"  >
+            <img class="bg_img" src="images/desserts_bg.jpg" alt="bg_img">
+            <div class="bg"></div>
+            <div class="menu-container">
+            </div>  
+        </div>
+
+<!-- МОИ САЛАТЫ -->
+        <div id="mysalads"  >
+            <img class="bg_img" src="images/salad_bg.jpg" alt="bg_img">
+            <div class="bg"></div>
+            <div class="menu-container">
+            </div>  
+        </div>
+
+<!-- МОЕ МЯСО -->
+        <div id="mymeat"  >
+            <img class="bg_img" src="images/meat_bg.jpg" alt="bg_img">
+            <div class="bg"></div>
+            <div class="menu-container">
+            </div>  
         </div>
 
 
 
 <!-- ДЕСЕРТ 2 -->
-        <div id="dessert2" hidden>
+        <div id="dessert2" class="reci" >
             <div class="none">
                 <img class="bg_img" src="images/dessert2-main.jpg" alt="bg_img">
             </div>
@@ -289,12 +307,24 @@
                             <img src="images/dessert2-15.jpg" alt="step15">
                             <p>Сразу перенесите розу на тарталетку и дождитесь, пока малиновая начинка оттает, чтобы вынуть шпажку. Не ставьте розу на доску, иначе ганаш повредится. Готовые тарталетки убирайте в холодильник, чтобы оттаяла начинка, а ганаш снова стал плотнее. Декорируем изумрудной фисташкой и малиновыми криспами.</p>
                         </div>
-                    </div>    
+                        <div class="addRecipe">+ Добавить в мою книгу рецептов</div>
+                        <div class="deleteRecipe">Удалить из моей книги рецептов</div>
+                        <div class="comments">
+                            <form class="addComment">
+                                <label for="inputComment"></label>
+                                <textarea name="" id="inputComment" cols="30" rows="10" placeholder='Оставьте комментарий'></textarea>
+                                <button type="submit">Оставить комментарий</button>
+                            </form>
+                            <div style="color: #f4c165; font-weight: lighter;" class="previous">Предыдущие комментарии</div>
+                            <div class="allComments">
+                            </div>
+                        </div>
+                    </div>  
                 </div>
             </div>
         </div>
 <!-- ДЕСЕРТ 4 -->
-        <div id="dessert4" hidden>
+        <div id="dessert4" class="reci" >
             <div class="none">
                 <img class="bg_img" src="images/dessert4-main.jpg" alt="bg_img">
             </div>
@@ -435,12 +465,14 @@
                             <img src="images/dessert4-16.jpg" alt="step16">
                             <p>На чизкейк нанесите взбитый ганаш лопаткой, посыпьте ягодами и мраморной шоколадной стружкой.</p>
                         </div>
+                        <div class="addRecipe">+ Добавить в мою книгу рецептов</div>
+                        <div class="deleteRecipe">Удалить из моей книги рецептов</div>
                     </div>
                 </div>
             </div>
         </div>
 <!-- ДЕСЕРТ 6 -->
-        <div id="dessert6" hidden>
+        <div id="dessert6" class="reci" >
             <div class="none">
                 <img class="bg_img" src="images/dessert6-main.jpg" alt="bg_img">
             </div>
@@ -495,12 +527,14 @@
                         <img src="images/dessert6-8.jpg" alt="step8">
                         <p>Я люблю трюфели потому что они универсальны: хорошо хранятся, переживают любую поездку хоть на край света, хорошо выглядят и всегда подходят в качестве презента важным людям.</p>
                         </div>
+                        <div class="addRecipe">+ Добавить в мою книгу рецептов</div>
+                        <div class="deleteRecipe">Удалить из моей книги рецептов</div>
                     </div>
                 </div>
             </div>
         </div>
 <!-- САЛАТ 3 -->
-        <div id="salad3" hidden>
+        <div id="salad3" class="reci" >
             <div class="none">
                 <img class="bg_img" src="images/salad3-main.jpg" alt="bg_img">
             </div>
@@ -537,12 +571,14 @@
                             <img src="images/salad3-4.jpg" alt="step4">
                             <p>Сборка элементарная. Смазываете тарелку хорошим оливковым маслом (желательно EV). А дальше чередуете хаотично помидоры, моцареллу, листики корн. Сверху ещё раз щедро поливаем маслом, свежемолотый перец, щепотка крупной соли. Но самое важное, поджарьте на гриле чиабатту, ну или хотя бы багет. Вот этот самый тёплый хруст прекрасно сочетается с холодными мягкими овощами и сыром.</p>
                         </div>
+                        <div class="addRecipe">+ Добавить в мою книгу рецептов</div>
+                        <div class="deleteRecipe">Удалить из моей книги рецептов</div>
                     </div>
                 </div>
             </div>
         </div>  
 <!-- САЛАТ 1 -->
-        <div id="salad1" hidden>
+        <div id="salad1" class="reci" >
             <div class="none">
                 <img class="bg_img" src="images/salad1-main.jpg" alt="bg_img">
             </div>
@@ -610,12 +646,14 @@
                             <img src="images/salad1-11.jpg" alt="step11">
                             <p>Соберите салат в тарелке, соединив лук и тыкву, добавив рубленную зелень и заправку из нейтрального йогурта или сметаны. Подавайте с хрустящими гренками из ржаной муки.</p>
                         </div>
+                        <div class="addRecipe">+ Добавить в мою книгу рецептов</div>
+                        <div class="deleteRecipe">Удалить из моей книги рецептов</div>
                     </div>
                 </div>
             </div>
         </div>
 <!-- САЛАТ 7 -->
-        <div id="salad7" hidden>
+        <div id="salad7" class="reci" >
             <div class="none">
                 <img class="bg_img" src="images/salad7-main.jpg" alt="bg_img">
             </div>
@@ -664,12 +702,14 @@
                             <img src="images/salad7-6.jpg" alt="step6">
                             <p>Теперь остаётся сложить все ингредиенты в чашку, добавить заправку, хорошо перемешать и выложить в тарелку.</p>
                         </div>
+                        <div class="addRecipe">+ Добавить в мою книгу рецептов</div>
+                        <div class="deleteRecipe">Удалить из моей книги рецептов</div>
                     </div>
                 </div>
             </div>
         </div>
 <!-- МЯСО 2 -->
-        <div id="meat2" hidden>
+        <div id="meat2" class="reci" >
     <div class="none">
         <img class="bg_img" src="images/meat2-main.jpg" alt="bg_img">
     </div>
@@ -726,12 +766,14 @@
                     <img src="images/meat2-8.jpg" alt="step8">
                     <p>Далее просто собираем бургер: лист салата (или руккола), пару слайсов свежего помидора, котлета, большая охапка лука и, моё любимое, хрустящие корнишоны.</p>
                 </div>
+                <div class="addRecipe">+ Добавить в мою книгу рецептов</div>
+                        <div class="deleteRecipe">Удалить из моей книги рецептов</div>
             </div>
         </div>
     </div>
         </div>
 <!-- МЯСО 8 -->
-        <div id="meat8" hidden>
+        <div id="meat8" class="reci" >
     <div class="none">
         <img class="bg_img" src="images/meat8-main.jpg" alt="bg_img">
     </div>
@@ -788,12 +830,14 @@
                     <img src="images/meat8-8.jpg" alt="step8">
                     <p>Важно дать мясу «отдохнуть». Для этого кладёте его на тарелку и минут 10-15 ждете. В это время сок, который сконцетрировался в центре куска, распределяется обратно, делая мясо равномерно сочным. Подаём стейк с нашим соусом и обязательно зубчатым ножом! </p>
                 </div>
+                <div class="addRecipe">+ Добавить в мою книгу рецептов</div>
+                        <div class="deleteRecipe">Удалить из моей книги рецептов</div>
             </div>
         </div>
     </div>
         </div>
 <!-- МЯСО 4 -->
-        <div id="meat4" hidden>
+        <div id="meat4" class="reci" >
     <div class="none">
         <img class="bg_img" src="images/meat4-main.jpg" alt="bg_img">
     </div>
@@ -844,10 +888,37 @@
                     <img src="images/meat4-6.jpg" alt="step6">
                     <p>Выпекать будем в духовке, разогретой до 180 градусов. Время зависит от размера курицы. У меня ушло где-то полтора часа. Причем за 25 минут до конца, я снял фольгу, и как раз в этот момент наш панцирь стал румяниться. Готовность птицы определить очень легко — проколите её ножом в самый толстый участок мяса, если сок выходит прозрачный, значит она готова. Передерживать её не стоит, иначе она будет сухой, тем более белое мясо.</p>
                 </div>
+                <div class="addRecipe">+ Добавить в мою книгу рецептов</div>
+                        <div class="deleteRecipe">Удалить из моей книги рецептов</div>
             </div>
         </div>
     </div>
         </div>
+        <div id="myBook">
+            <img class="bg_img" src="images/index_bg.jpg" alt="bg_img">
+            <div class="bg"></div>
+            <div class="menu-container">
+                <a href="#mydesserts">
+                    <div class="card">
+                        <img src="images/dessert2-main.jpg" alt="dessert2">
+                        <h4>Десерты</h4>
+                    </div>
+                </a>
+                <a href="#mymeat">
+                    <div class="card">
+                        <img src="images/meat2-main.jpg" alt="meat2">
+                        <h4>Мясные блюда</h4>
+                    </div>
+                </a>
+                <a href="#mysalads">
+                    <div class="card">
+                        <img src="images/salad3-main.jpg" alt="salad3">
+                        <h4>Салаты</h4>
+                    </div>
+                </a>
+            </div>  
+        </div>
+
 
     </main>
     <footer>
@@ -855,6 +926,7 @@
     </footer>
 
 <script src="script.js"> </script>
+
  
 </body>
 </html>
