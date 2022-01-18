@@ -258,7 +258,7 @@ hr {
   background-color: #f4c165;
   padding: 15px;
   text-align: center;
-  margin: 10vw;
+  margin: 30px 10vw 50px 10vw;
 }
 .addRecipe:hover,
 .deleteRecipe:hover {
@@ -286,7 +286,7 @@ hr {
   height: 50px;
 }
 .addComment button {
-  margin: 10px auto 10px 0;
+  margin: 10px 0 10px auto;
   padding: 5px 20px;
   background-color:rgba(23, 58, 54, 1);
   width: auto;

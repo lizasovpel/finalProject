@@ -14,6 +14,7 @@ const mymeat = document.querySelector('#mymeat')
 let locations = []
 locations.push(login, mainMenu, myBook, desserts, meat, mysalads, mydesserts, mymeat, salads)
 allRecipies.forEach(r => locations.push(r))
+locations.forEach(location => location.hidden = true)
 
 // кнопки и формы
 const formLogin = document.querySelector('.formlogin') 
@@ -28,6 +29,9 @@ let addRecipe = document.querySelectorAll('.addRecipe')
 let deleteRecipe = document.querySelectorAll('.deleteRecipe')
 addRecipe.forEach(el => el.addEventListener('click', addDelete))
 deleteRecipe.forEach(el => el.addEventListener('click', addDelete))
+
+let imgOk = document.querySelectorAll('.imgOk')
+let imgEdit = document.querySelectorAll('.imgEdit')
 
 
 // localstorage
@@ -105,11 +109,12 @@ formLogin.addEventListener('submit', function (e) {
 
 //переход на другую страницу
 function locationChanged() {
-    locations.forEach(el => {
-        el.hidden = true
-    })
+    locations.forEach(el => el.hidden = true)
+
     if (location.hash && location.hash !== '#login') {
         refreshComments ()
+        deleteComment()
+        menu()
         if(users[currentUser]) {
             document.querySelector(location.hash).hidden = false
             account.hidden = false
@@ -156,7 +161,26 @@ function addDelete (e) {
     }
     localStorage.setItem('users', JSON.stringify(users))
 }
+//отрисовка разделов общего меню
+function menu(){
+    if (location.hash === '#desserts' || location.hash === '#meat' ||location.hash === '#salads'){
+        let container = document.querySelector(`${location.hash} .menu-container`)
+        container.innerHTML = ''
+        let AllOfThese = document.querySelectorAll(`.reci[id^="${location.hash.slice(1, location.hash.length-1)}"]`)
+        console.log(AllOfThese)
 
+        AllOfThese.forEach(recipe => {
+            let card = document.createElement('a')
+            card.href = `#${recipe.id}`
+            card.innerHTML = `<div class="card">
+            <img src="images/${recipe.id}-main.jpg" alt="${recipe.id}">
+            <h4>${recipe.querySelector('h1').innerHTML}</h4>
+            </div>`
+            container.append(card)
+        })
+    }
+    
+}
 //отрисовка всего личного меню
 function myMenu () {
     if (users[currentUser]){
@@ -182,25 +206,21 @@ myMenu()
 // отрисовка разделов личного меню
 function changeMy (a) {
     let my = document.querySelector(`#my${a} .menu-container`)
-    let myInner = []
+    my.innerHTML = ''
     
     if (users[currentUser][a][0]) {
         let current = users[currentUser][a]
-
         current.forEach(el => {
-            let string = `<a href="#${el}">
+            let string = document.createElement('a')
+            string.innerHTML = `
             <div class="card">
                 <img src="images/${el}-main.jpg" alt="${el}">
                 <h4>${document.querySelector(`#${el} h1`).innerHTML}</h4>
-            </div>
-        </a>`
-            myInner.push(string)
+            </div>`
+            string.href = `#${el}`
+            my.append(string)
         })
-        my.innerHTML = myInner
-    
-    } else {
-        my.innerHTML = ''
-    }
+    } 
 }
 if (users[currentUser]) {
     changeMy ('desserts')
@@ -275,38 +295,40 @@ function refreshComments (){
 // удаление и изменение комментариев
 function deleteComment(){
     let commentsContainer = document.querySelector(`${location.hash} .allComments`)
-    commentsContainer.addEventListener('click', function(e){
-        let targetComment = e.target.parentElement.parentElement.parentElement
-
-        if(e.target.classList.contains('imgDelete')) {
-            targetComment.parentElement.removeChild(targetComment)
- 
-        }
-
-        if (e.target.classList.contains('imgEdit')){
-            e.target.hidden = true
-            e.target.parentElement.querySelector('.imgOk').hidden = false
-            let targetString = e.target.parentElement.parentElement.querySelector('p')
-            let text = targetString.innerHTML
-            targetString.outerHTML = `<textarea name="EditComment" style="width:95%">${text}</textarea>`
-        }
-
-        if (e.target.classList.contains('imgOk')){
-            e.target.parentElement.querySelector('.imgOk').hidden = true
-            e.target.parentElement.querySelector('.imgEdit').hidden = false
-            let targetString = e.target.parentElement.parentElement.querySelector('textarea')
-            let text = targetString.value
-            console.log(text)
-            targetString.outerHTML = `<p>${text}</p>`
-        }
-        comments[location.hash] = []
-        let AllComments = commentsContainer.querySelectorAll('.comment')
-        AllComments.forEach(c => {
-            c = c.outerHTML
-            comments[location.hash].push(c)
+    if (commentsContainer) {
+        commentsContainer.addEventListener('click', function(e){
+            let targetComment = e.target.parentElement.parentElement.parentElement
+    
+            if(e.target.classList.contains('imgDelete')) {
+                targetComment.parentElement.removeChild(targetComment)
+     
+            }
+    
+            if (e.target.classList.contains('imgEdit')){
+                e.target.hidden = true
+                e.target.parentElement.querySelector('.imgOk').hidden = false
+                let targetString = e.target.parentElement.parentElement.querySelector('p')
+                let text = targetString.innerHTML
+                targetString.outerHTML = `<textarea name="EditComment" style="width:95%">${text}</textarea>`
+            }
+    
+            if (e.target.classList.contains('imgOk')){
+                e.target.parentElement.querySelector('.imgOk').hidden = true
+                e.target.parentElement.querySelector('.imgEdit').hidden = false
+                let targetString = e.target.parentElement.parentElement.querySelector('textarea')
+                let text = targetString.value
+                targetString.outerHTML = `<p>${text}</p>`
+            }
+            comments[location.hash] = []
+            let AllComments = commentsContainer.querySelectorAll('.comment')
+            AllComments.forEach(c => {
+                c = c.outerHTML
+                comments[location.hash].push(c)
+            })
+            localStorage.setItem('comments', JSON.stringify(comments))
         })
-        localStorage.setItem('comments', JSON.stringify(comments))
-    })
+    
+    }
 }
 // как показываются комментарии для конкретного пользователя
 function showComments (){
