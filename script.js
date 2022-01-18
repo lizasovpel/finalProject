@@ -233,6 +233,7 @@ FormsComment.forEach(form => {
             <div class="redact">
                 <img src="images/delete.png" class="imgDelete" alt="delete">
                 <img src="images/edit.png" class="imgEdit" alt="edit">
+                <img src="images/ok.png" class="imgOk" alt="ok" hidden>
             </div>
         </div>    
     </div>`
@@ -242,7 +243,7 @@ FormsComment.forEach(form => {
         comments[location.hash].unshift(newComment)
         comment.value = ''
         refreshComments ()
-        deleteComment(e)
+        deleteComment()
 
         localStorage.setItem('comments', JSON.stringify(comments))
 
@@ -253,7 +254,6 @@ FormsComment.forEach(form => {
 function refreshComments (){
     let Inner = document.querySelector(`${location.hash}`).querySelector('.allComments')
     if (Inner) {
-        // Inner.innerHTML = comments[location.hash]
         Inner.innerHTML = []
         let prev = document.querySelector(`${location.hash} .previous`)
 
@@ -272,7 +272,42 @@ function refreshComments (){
     }
     showComments ()
 }
+// удаление и изменение комментариев
+function deleteComment(){
+    let commentsContainer = document.querySelector(`${location.hash} .allComments`)
+    commentsContainer.addEventListener('click', function(e){
+        let targetComment = e.target.parentElement.parentElement.parentElement
 
+        if(e.target.classList.contains('imgDelete')) {
+            targetComment.parentElement.removeChild(targetComment)
+ 
+        }
+
+        if (e.target.classList.contains('imgEdit')){
+            e.target.hidden = true
+            e.target.parentElement.querySelector('.imgOk').hidden = false
+            let targetString = e.target.parentElement.parentElement.querySelector('p')
+            let text = targetString.innerHTML
+            targetString.outerHTML = `<textarea name="EditComment" style="width:95%">${text}</textarea>`
+        }
+
+        if (e.target.classList.contains('imgOk')){
+            e.target.parentElement.querySelector('.imgOk').hidden = true
+            e.target.parentElement.querySelector('.imgEdit').hidden = false
+            let targetString = e.target.parentElement.parentElement.querySelector('textarea')
+            let text = targetString.value
+            console.log(text)
+            targetString.outerHTML = `<p>${text}</p>`
+        }
+        comments[location.hash] = []
+        let AllComments = commentsContainer.querySelectorAll('.comment')
+        AllComments.forEach(c => {
+            c = c.outerHTML
+            comments[location.hash].push(c)
+        })
+        localStorage.setItem('comments', JSON.stringify(comments))
+    })
+}
 // как показываются комментарии для конкретного пользователя
 function showComments (){
     let DIV = document.querySelector(`${location.hash} .comments`)
