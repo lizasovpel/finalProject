@@ -277,6 +277,23 @@ hr {
   margin-bottom: 20px;
 
 }
+.answer{
+  text-align: right;
+  font-size: smaller;
+}
+.andyAnswer{
+  margin: 20px 0px 0px 50px;
+}
+.andyAnswer .name{
+  text-decoration: underline;
+  color: black;
+}
+.andyAnswer button{
+  margin: 0 0 0 auto;
+}
+.ans{
+  width: 95%;
+}
 .addComment > *{
   margin: 10px 0;
 }
